@@ -32,3 +32,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   jaffle_shop:
     # Config indicated by + and applies to all files under models/example/
+    # Matérialisation par défaut pour tous les modèles : vue
+    +materialized: view
+
+    staging:  # Pour tous les modèles dans le dossier 'staging'
+      # Matérialisation en tant que table
+      +materialized: view
